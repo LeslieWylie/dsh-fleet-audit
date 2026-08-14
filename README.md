@@ -70,6 +70,25 @@ npm install
 npm run check   # typecheck + vitest + build
 ```
 
+## 已知局限
+
+- 仅扫描文本类配置文件（不会解析加密存储、系统钥匙串、二进制文件）
+- token 前缀识别为启发式规则：可能漏报（非常规前缀）或误报（需人工复核）
+- 默认只检查固定凭据列表；任意路径凭据请通过 `roots` / `files` 显式指定
+- 不主动修改任何文件；发现泄漏后请自行 `chmod 600` 并轮换密钥
+
+## 回滚
+
+```sh
+dsh plugin --profile <p> remove dsh-fleet-audit   # 或从 dsh.profile.bundles 删除该行
+```
+插件只读、无状态，卸载不影响任何用户数据。
+
+## 独立社区插件
+
+本项目为独立社区插件，与 DeepSeek 官方或其 DSH 仓库无隶属关系；"official"
+身份仅通过官方渠道授予。发布时会给仓库添加 `dsh-plugin` topic 以便发现。
+
 ## 许可
 
 MIT © omdsh-dev

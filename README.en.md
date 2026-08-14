@@ -69,6 +69,24 @@ npm install
 npm run check   # typecheck + vitest + build
 ```
 
+## Known limitations
+
+- Textual config files only (no encrypted stores, keychains, or binaries)
+- Token-prefix matching is heuristic: false negatives (unusual prefixes) and positives (manual review needed) are possible
+- Default checks cover a fixed credential list; pass `roots` / `files` to cover arbitrary paths
+- The plugin never modifies anything; after a finding, run `chmod 600` and rotate the credential yourself
+
+## Rollback
+
+```sh
+dsh plugin --profile <p> remove dsh-fleet-audit   # or drop the row from dsh.profile.bundles
+```
+The plugin is read-only and stateless; uninstalling it never touches user data.
+
+## Independent community plugin
+
+This project is an independent community plugin with no affiliation to DeepSeek or its official DSH repo; "official" status is only granted through official channels. The `dsh-plugin` topic will be added for discoverability at release time.
+
 ## License
 
 MIT © omdsh-dev
