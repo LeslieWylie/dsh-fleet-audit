@@ -6,7 +6,7 @@
 
 1. **凭据文件权限** —— 常用凭据文件（`~/.gitconfig`、`~/.netrc`、`~/.npmrc`、`~/.env`、`~/.ssh/`）应收紧为 `600`/《700`，组/其他可读一律标记为 `tooOpen`
 2. **git remote 内嵌凭据** —— 扫描 `~/.gitconfig` 与给定目录下的 `.git/config`，识别 `https://user:pass@host`、`https://oauth2:TOKEN@host`、token 型用户名等；输出 URL 中凭据以 `***` 掩码，**逐字节保证不泄露原文**
-3. **provider token 前缀字面量**（可关）—— github / github-fine-grained / gitlab / gitlab-ci / slack / aws / openai / multica / jwt 常见前缀，只报「类型 × 出现次数」
+3. **provider token 前缀字面量**（可关）—— github / github-fine-grained / gitlab / gitlab-ci / slack / aws / openai / jwt 常见前缀，只报「类型 × 出现次数」
 
 ## 为什么
 
@@ -21,7 +21,7 @@ dsh plugin --profile web add /path/to/dsh-fleet-audit
 # 发布后（npm / GitHub）
 dsh plugin --profile web add dsh-fleet-audit
 # 或
-dsh plugin --profile web add github:omdsh-dev/dsh-fleet-audit
+dsh plugin --profile web add github:LeslieWylie/dsh-fleet-audit
 ```
 
 安装后重启 `dsh web`，直接说「审计一下本机凭据卫生 / run fleet_audit」。
@@ -91,4 +91,4 @@ dsh plugin --profile <p> remove dsh-fleet-audit   # 或从 dsh.profile.bundles �
 
 ## 许可
 
-MIT © omdsh-dev
+MIT © LeslieWylie

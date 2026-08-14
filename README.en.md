@@ -6,7 +6,7 @@
 
 1. **Credential-file permissions** — well-known credential files (`~/.gitconfig`, `~/.netrc`, `~/.npmrc`, `~/.env`, `~/.ssh/`) should be `600`/`700`; group/other-readable entries are flagged `tooOpen`
 2. **Embedded credentials in git remotes** — scans `~/.gitconfig` and `.git/config` under the given roots for `https://user:pass@host`, `https://oauth2:TOKEN@host`, or token-like usernames; values are masked as `***` in the output — **byte-for-byte guarantee that the raw secret never appears**
-3. **Provider token-prefix literals** (optional) — github / github-fine-grained / gitlab / gitlab-ci / slack / aws / openai / multica / jwt prefixes, reported as provider × count only
+3. **Provider token-prefix literals** (optional) — github / github-fine-grained / gitlab / gitlab-ci / slack / aws / openai / jwt prefixes, reported as provider × count only
 
 ## Why
 
@@ -21,7 +21,7 @@ dsh plugin --profile web add /path/to/dsh-fleet-audit
 # after publishing
 dsh plugin --profile web add dsh-fleet-audit
 # or
-dsh plugin --profile web add github:omdsh-dev/dsh-fleet-audit
+dsh plugin --profile web add github:LeslieWylie/dsh-fleet-audit
 ```
 
 Restart `dsh web` after installing, then just ask: "audit credential hygiene on this machine" → the agent calls `fleet_audit`.
@@ -89,4 +89,4 @@ This project is an independent community plugin with no affiliation to DeepSeek 
 
 ## License
 
-MIT © omdsh-dev
+MIT © LeslieWylie

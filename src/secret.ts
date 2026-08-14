@@ -17,7 +17,6 @@ export const SECRET_PATTERNS: SecretPattern[] = [
   { provider: 'slack', re: /\bxox[baprs]-[A-Za-z0-9-]{10,}\b/g },
   { provider: 'aws', re: /\bAKIA[0-9A-Z]{16}\b/g },
   { provider: 'openai', re: /\bsk-[A-Za-z0-9]{16,}\b/g },
-  { provider: 'multica', re: /\bmul_[A-Za-z0-9]{12,}\b/g },
   { provider: 'jwt', re: /\beyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\b/g },
 ]
 
