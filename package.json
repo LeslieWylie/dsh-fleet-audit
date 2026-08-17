@@ -2,7 +2,6 @@
   "name": "dsh-fleet-audit",
   "description": "DSH agent-fleet hygiene audit: credential-file permissions, embedded credentials in git remotes (masked), provider token-prefix literals. Read-only, zero-dependency, deterministic.",
   "version": "0.0.1",
-  "private": true,
   "type": "module",
   "main": "lib/index.js",
   "types": "lib/types/index.d.ts",
