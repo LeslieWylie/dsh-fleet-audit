@@ -24,3 +24,10 @@ jobs:
       - run: npm install
       - run: npm run typecheck
       - run: npm test
+        env:
+          # Belt and braces for the comment above: the devDependencies make the
+          # boot check resolvable today, but if that ever regresses the suite
+          # would go back to printing SKIPPED and exiting 0. This turns that
+          # state into a failed job, while a bare clone without the harness
+          # installed can still run `npm test` normally.
+          DSH_BOOT_STRICT: '1'
